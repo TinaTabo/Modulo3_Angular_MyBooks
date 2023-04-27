@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+/* Limpiadores: resetean los valores predefinidos de la página*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --color-primario: #002A4D;
+    --color-secundario: #0077B6;
+    --color-terciario: #00A9E0;
+    --color-pastel: #90D1F9;
+    --color-gris: #B0B9C3;
+    --color-blanco: #FFFFFF;
+}
