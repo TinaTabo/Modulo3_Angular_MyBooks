@@ -1,0 +1,12 @@
+.home{
+    height: 79vh;
+    background-image: url(../../../assets/img/fondo-home.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    color: var(--color-primario);
+}
