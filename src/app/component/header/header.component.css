@@ -8,7 +8,7 @@ nav{
 }
     .header__title{
         margin-left: 50px;
-        font-size: 40px;
+        font-size: 35px;
         color: var(--color-blanco);
         font-family: '--fuente-primaria';
     }
@@ -30,3 +30,36 @@ nav{
         .header__link:hover{
             color: var(--color-pastel);
         }
+
+/*----------Media-Queries---------*/
+@media screen and (max-width: 475px) {
+    .header__title{
+        font-size: 30px;
+        margin-left: 25px;
+    }
+    .header__menu{
+        gap: 20px;
+        margin-right: 25px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .header__title{
+        font-size: 25px;
+        margin-left: 25px;
+    }
+    .header__menu{
+        gap: 10px;
+        margin-right: 25px;
+    }
+}
+@media screen and (max-width: 280px) {
+    .header__title{
+        font-size: 20px;
+        margin-left: 0px;
+    }
+    .header__menu{
+        gap: 5px;
+        margin-right: 0px;
+        font-size: 20px;
+    }
+}

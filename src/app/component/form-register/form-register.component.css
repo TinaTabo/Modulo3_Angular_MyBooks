@@ -70,3 +70,11 @@ form{
         font-weight: 600;
         transform: translateY(4px);
     }
+
+
+/*----------Media-Queries---------*/
+@media screen and (max-width: 280px) {
+    form{
+        width: 240px;
+    }
+}

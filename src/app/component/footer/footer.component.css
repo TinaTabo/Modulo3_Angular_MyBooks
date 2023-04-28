@@ -20,3 +20,36 @@ footer{
     .footer__firma{
         color: var(--color-gris);
     }
+
+
+/*----------Media-Queries---------*/
+@media screen and (max-width: 540px) {
+        .footer__rrss{
+            gap: 10px;
+            margin-left: 10px;
+        }
+        .footer__firma{
+            font-size: 12px;
+            margin-right: 10px;
+            text-align: center;
+        }
+}
+@media screen and (max-width: 375px) {
+    .footer__rrss{
+        gap: 5px;
+        margin-left: 10px;
+    }
+        img{
+            width: 25px;
+            height: 25px;
+        }
+    .footer__firma{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 280px) {
+    img{
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -1,9 +1,42 @@
 .register-page{
-    height: 76.8vh;
+    height: 77.9vh;
     background-image: url(../../../assets/img/fondo-home.png);
     background-size: cover;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+
+/*----------Media-Queries---------*/
+@media screen and (max-width: 1280px) {
+    .register-page{
+        height: 82.6vh;
+    }
+}
+@media screen and (max-width: 912px) {
+    .register-page{
+        height: 90vh;
+    }
+}
+@media screen and (max-width: 820px) {
+    .register-page{
+        height: 88.3vh;
+    }
+}
+@media screen and (max-width: 414px) {
+    .register-page{
+        height: 85.5vh;
+    }
+}
+@media screen and (max-width: 375px) {
+    .register-page{
+        height: 82.5vh;
+    }
+}
+@media screen and (max-width: 360px) {
+    .register-page{
+        height: 84vh;
+    }
 }
