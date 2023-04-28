@@ -23,3 +23,10 @@ nav{
         font-family: '--fuente-primaria';
         list-style: none;
     }
+        .header__link{
+            color: var(--color-blanco);
+            font-family: '--fuente-primaria';
+        }
+        .header__link:hover{
+            color: var(--color-pastel);
+        }
