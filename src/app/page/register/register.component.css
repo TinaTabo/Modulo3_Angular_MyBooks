@@ -1,0 +1,9 @@
+.register-page{
+    height: 76.8vh;
+    background-image: url(../../../assets/img/fondo-home.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
