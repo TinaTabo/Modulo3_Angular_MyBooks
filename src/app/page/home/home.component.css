@@ -9,4 +9,5 @@
     align-items: center;
     text-align: center;
     color: var(--color-primario);
+    font-family: '--fuente-primaria';
 }

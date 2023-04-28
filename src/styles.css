@@ -6,6 +6,10 @@
     text-decoration: none;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 :root {
     --color-primario: #002A4D;
     --color-secundario: #0077B6;
@@ -13,4 +17,9 @@
     --color-pastel: #90D1F9;
     --color-gris: #B0B9C3;
     --color-blanco: #FFFFFF;
+}
+
+@font-face {
+    font-family: '--fuente-primaria';
+    src: url(./assets/font/Chapaza.ttf);
 }
