@@ -30,13 +30,13 @@
 
             <div class="form__group">
                 <div class="form__editData">
-                    <input type="text" id="name" placeholder="Nombre">
-                    <input type="text" id="lastName" placeholder="Apellidos">
-                    <input type="text" id="email" placeholder="Correo">
-                    <input type="text" id="url" placeholder="Url">
+                    <input type="text" id="name" placeholder="Nombre" #name>
+                    <input type="text" id="lastName" placeholder="Apellidos" #last_name>
+                    <input type="text" id="email" placeholder="Correo" #email>
+                    <input type="text" id="url" placeholder="Url" #photo>
                 </div>
 
-                <button class="form__button" type="reset" (click)=modify()>
+                <button class="form__button" type="reset" (click)=modify(name.value,last_name.value,email.value,photo.value)>
                     Modificar
                 </button>
             </div>
