@@ -121,6 +121,15 @@
                 font-weight: 600;
                 transform: translateY(4px);
             }
+            .msg__actu{
+                display: none;
+                color: rgb(180, 251, 38);
+            }
+            .msg__no-actu{
+                display: none;
+                font-weight: bold;
+                color: rgb(196, 1, 1);
+            }
 
 
 /*----------Media-Queries---------*/

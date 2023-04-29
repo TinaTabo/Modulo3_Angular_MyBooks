@@ -39,6 +39,12 @@
                 <button class="form__button" type="reset" (click)=modify(name.value,last_name.value,email.value,photo.value)>
                     Modificar
                 </button>
+                <div class="msg__actu" #msgActu>
+                    Usuario actualizado
+                </div>
+                <div class="msg__no-actu" #msgNoActu>
+                    No se ha detectado cambios
+                </div>
             </div>
         </form>
     </div>
