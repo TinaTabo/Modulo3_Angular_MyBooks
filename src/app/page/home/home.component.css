@@ -39,7 +39,7 @@
 }
 @media screen and (max-width: 414px) {
     .home{
-        height: 85.5vh;
+        height: 85.7vh;
         padding: 30px;
     }
 }
@@ -61,6 +61,7 @@
 }
 @media screen and (max-width: 280px) {
     .home{
+        height: 85.1vh;
         font-size: 11px;
     }
 }
