@@ -1,22 +1,22 @@
 <div class="profile-page">
     <!-- caja izquierda -->
     <div class="left">
-        <img src="../../../assets/img/foto-perfil.jpg" alt="" class="left__img">
+        <img src="¨{{profile.photo}}" alt="" class="left__img">
 
-        <h2 class="left__title">📘Cristina Taboada Mayo</h2>
+        <h2 class="left__title">📘{{profile.name}} {{profile.last_name}}</h2>
 
         <div class="left__data">
             <div class="data__field">
                 <p class="title">Nombre</p>
-                <p class="info">Cristina</p>
+                <p class="info">{{profile.name}}</p>
             </div>
             <div class="data__field">
                 <p class="title">Apellido</p>
-                <p class="info">Taboada Mayo</p>
+                <p class="info">{{profile.last_name}}</p>
             </div>
             <div class="data__field">
                 <p class="title">Correo</p>
-                <p class="info">usuario@correo.com</p>
+                <p class="info">{{profile.email}}</p>
             </div>
         </div>
     </div>
