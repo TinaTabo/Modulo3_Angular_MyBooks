@@ -14,20 +14,19 @@ export class ProfileComponent {
   }
 
   modify(name:string,last_name:string,email:string,photo:string){
-    console.log(this.profile.name);
-    this.profile.name = name;
-    console.log(this.profile.name);
-
-    console.log(this.profile.last_name);
-    this.profile.last_name = last_name;
-    console.log(this.profile.last_name);
-
-    console.log(this.profile.email);
-    this.profile.email = email;
-    console.log(this.profile.email);
-
-    console.log(this.profile.photo);
-    this.profile.photo = photo;
-    console.log(this.profile.photo);
+    console.log(this.profile);
+    if (name != '') {
+      this.profile.name = name;
+    }
+    if (last_name != '') {
+      this.profile.last_name = last_name;
+    }
+    if (email != '') {
+      this.profile.email = email;
+    }
+    if (photo != '') {
+      this.profile.photo = photo;
+    }
+    console.log(this.profile);
   }
 }
