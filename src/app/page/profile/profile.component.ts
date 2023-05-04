@@ -48,5 +48,10 @@ export class ProfileComponent {
       this.renderer2.setStyle(msgActu, 'display', 'none');
       this.renderer2.setStyle(msgNoActu, 'display', 'block');
     }
+
+    setTimeout(()=>{
+      this.renderer2.setStyle(msgNoActu, 'display', 'none');
+      this.renderer2.setStyle(msgActu, 'display', 'none');
+    }, 3000);
   }
 }
