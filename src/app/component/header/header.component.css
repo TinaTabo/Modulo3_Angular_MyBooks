@@ -32,9 +32,15 @@ nav{
         }
 
 /*----------Media-Queries---------*/
+@media screen and (max-width: 768px) {
+    nav{
+        gap: 30px;
+    }
+}
 @media screen and (max-width: 540px) {
     .header__title{
         font-size: 30px;
+        margin-left: 20px;
     }
     .header__menu{
         gap: 25px;
@@ -43,16 +49,17 @@ nav{
 @media screen and (max-width: 475px) {
     .header__title{
         font-size: 30px;
-        margin-left: 0px;
     }
     .header__menu{
         margin-right: 0px;
         gap: 10px;
+        flex-wrap: wrap;
     }
 }
 @media screen and (max-width: 375px) {
     .header__title{
         font-size: 25px;
+        margin-left: 20px;
     }
 }
 @media screen and (max-width: 280px) {
