@@ -7,7 +7,7 @@
             <div class="line"></div>
             <h3 class="card__book--title">{{book.title}}</h3>
             <p class="card__book--author">{{book.author}}</p>
-            <p class="card__book--ref">{{book.id_book}}</p>
+            <p class="card__book--ref">{{book.id_book | bookRef}}</p>
             <h4 class="card__book--price">{{book.price}}€</h4>
             <button class="card__button" [ngClass]="par ? 'odd__button' : ''">Comprar</button>
         </div>
