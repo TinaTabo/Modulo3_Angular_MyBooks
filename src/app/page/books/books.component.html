@@ -1,1 +1,20 @@
-<p>books works!</p>
+<div class="main-container" *ngIf="books.length>0; else empty">
+    <div class="card" *ngFor="let book of books; let par = even">
+        <img src="{{book.photo}}" alt="Portada del libro" class="card__img">
+        <div class="card__body">
+            <p class="card__book--type">{{book.type}}</p>
+            <div class="line"></div>
+            <h3 class="card__book--title">{{book.title}}</h3>
+            <p class="card__book--author">{{book.author}}</p>
+            <p class="card__book--ref">{{book.id_book}}</p>
+            <h4 class="card__book--price">{{book.price}}€</h4>
+            <button class="card__button" [ngClass]="par ? 'odd__button' : ''">Comprar</button>
+        </div>
+    </div>
+</div>
+
+<ng-template #empty>
+    <div class="main-container" style="height: 77.9vh;">
+        <h1 class="text__empty">No hay Libros</h1>
+    </div>
+</ng-template>
