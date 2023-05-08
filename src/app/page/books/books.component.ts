@@ -19,4 +19,9 @@ export class BooksComponent {
       new Book('Cuando los Árboles Cantan','Tapa blanda','Laura Gallego',12.95,'https://imagessl0.casadellibro.com/a/l/t7/30/9788467550030.jpg',629108,5678)
     ]
   }
+
+  addBook(title:string,type:string,author:string,price:number,photo:string,id_book:number){
+    let newBook = new Book(title,type,author,price,photo,id_book,0);
+    this.books.push(newBook);
+  }
 }
