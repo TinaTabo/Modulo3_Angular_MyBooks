@@ -24,4 +24,9 @@ export class BooksComponent {
     let newBook = new Book(title,type,author,price,photo,id_book,0);
     this.books.push(newBook);
   }
+
+  deleteBook(bookTitle:string):void{
+    console.log(bookTitle);
+    this.books = this.books.filter(book => book.title != bookTitle);
+  }
 }
