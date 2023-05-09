@@ -22,8 +22,11 @@ form{
     align-items: center;
     gap: 20px;
     padding: 30px;
+    padding-top: 100px;
 
     background-image: url(../../../assets/img/gif-fondo.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
     .form__header{
         text-align: center;
