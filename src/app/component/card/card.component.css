@@ -13,6 +13,9 @@
     padding: 10px;
     margin: 20px;
 }
+    .card__book--title{
+        height: 45px;
+    }
     .card__button--X{
         align-self: flex-end;
         border: none;
