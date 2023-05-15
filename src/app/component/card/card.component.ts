@@ -9,9 +9,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class CardComponent {
   @Input() book: Book;
   @Input() par: boolean;
-  @Output() bookTitle = new EventEmitter<string>();
+  @Output() bookTitle = new EventEmitter<number>();
 
-  sendBookTitle():void{
-    this.bookTitle.emit(this.book.title);
+  sendBookId():void{
+    this.bookTitle.emit(this.book.id_book);
   }
 }
