@@ -1,12 +1,18 @@
-<!-- Cards Block -->
-<div class="main-container" *ngIf="books.length>0; else empty">
-    <ng-container *ngFor="let book of books; let par = even">
-        <app-card [book]="book" [par]="par" (bookTitle)="deleteBook($event)"></app-card>
-    </ng-container>
-</div>
-
-<ng-template #empty>
-    <div class="main-container" style="height: 77.9vh;">
-        <h1 class="text__empty">No hay Libros</h1>
+<main>
+    <div class="search_bar">
+        <input type="search" id="search_bar" placeholder="Buscador de libros...(Introduce la Ref del libro)" #searched_id_book>
+        <button class="search__button" type="reset" (click)="searchBook(searched_id_book.value)"></button>
     </div>
-</ng-template>
+    <!-- Cards Block -->
+    <div class="main-container" *ngIf="books.length>0; else empty">
+        <ng-container *ngFor="let book of books; let par = even">
+            <app-card [book]="book" [par]="par" (bookTitle)="deleteBook($event)"></app-card>
+        </ng-container>
+    </div>
+
+    <ng-template #empty>
+        <div class="main-container" style="height: 77.9vh;">
+            <h1 class="text__empty">No hay Libros</h1>
+        </div>
+    </ng-template>
+</main>

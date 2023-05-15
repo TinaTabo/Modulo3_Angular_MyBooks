@@ -26,16 +26,14 @@ export class BooksService {
   //-- Método para obtener un solo libro --> buscador.
   getOne(id_book:number):Book{
     let find:boolean = false;
+    let idx:number = 0;
     for (let i:number = 0; i < this.books.length; i++) {
       if (id_book == this.books[i].id_book) {
         find = true;
-        return this.books[i];
+        idx = i;
       }
     }
-
-    if (find == false) {
-      console.log('Libro no encontrado.');
-    }
+    return this.books[idx];
   }
 
   //-- Método para añadir un libro --> Funcionalidad de la pg Add Book.

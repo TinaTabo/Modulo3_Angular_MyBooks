@@ -18,4 +18,12 @@ export class BooksComponent {
   deleteBook(id_book:number):void{
     this.booksService.delete(id_book);
   }
+
+  searchBook(id_book:string):void{
+    if (id_book != '') {
+      this.books = [this.booksService.getOne(Number(id_book))];
+    }else{
+      this.books = this.booksService.getAll();
+    }
+  }
 }
