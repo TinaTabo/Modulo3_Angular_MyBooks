@@ -10,25 +10,3 @@
         <h1 class="text__empty">No hay Libros</h1>
     </div>
 </ng-template>
-
-<!-- Form Block -->
-<div class="form-block">
-    <form>
-        <h1 class="form__header">Añadir libro</h1>
-
-        <div class="form__body">
-            <div class="form__data">
-                <input type="text" id="title" placeholder="Título" #title>
-                <input type="text" id="type" placeholder="Tapa blanda/dura" #type>
-                <input type="text" id="author" placeholder="Autor" #author>
-                <input type="text" id="price" placeholder="Precio" #price>
-                <input type="text" id="photo" placeholder="Foto" #photo>
-                <input type="text" id="id_book" placeholder="Código libro" #id_book>
-            </div>
-
-            <button class="form__button" type="reset" (click)="addBook(title.value,type.value,author.value,price.value,photo.value,id_book.value)">
-                Insertar Libro
-            </button>
-        </div>
-    </form>
-</div>
