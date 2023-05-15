@@ -18,10 +18,12 @@ export class BooksService {
   }
 
   // Métodos del servicio
+  //-- Método para obtener todos los libros.
   getAll():Book[]{
     return this.books;
   }
 
+  //-- Método para obtener un solo libro --> buscador.
   getOne(id_book:number):Book{
     let find:boolean = false;
     for (let i:number = 0; i < this.books.length; i++) {
@@ -36,10 +38,12 @@ export class BooksService {
     }
   }
 
+  //-- Método para añadir un libro --> Funcionalidad de la pg Add Book.
   add(book:Book):void{
     this.books.push(book);
   }
 
+  //-- Método para editar un libro --> Funcionalidad de la pg Update Book.
   edit(book:Book):boolean{
     let edit:boolean = false;
     //-- Se supone que el título del libro no se modifica, es con lo que identificamos
@@ -72,6 +76,7 @@ export class BooksService {
     return edit;
   }
 
+  //-- Método para borrar un libro --> Funcionalidad del botón 'X' de las cards de cada libro.
   delete(id_book:number):boolean{
     let deleted:boolean = false;
     for (let i:number = 0; i < this.books.length; i++) {
