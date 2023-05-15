@@ -1,8 +1,5 @@
 <main>
-    <div class="search_bar">
-        <input type="search" id="search_bar" placeholder="Buscador de libros...(Introduce la Ref del libro)" #searched_id_book>
-        <button class="search__button" type="reset" (click)="searchBook(searched_id_book.value)"></button>
-    </div>
+    <input type="search" id="search_bar" placeholder="Buscador de libros...(Introduce la Ref del libro)" (keyup)="searchBook(searched_id_book.value)" #searched_id_book>
     <!-- Cards Block -->
     <div class="main-container" *ngIf="books.length>0; else empty">
         <ng-container *ngFor="let book of books; let par = even">
