@@ -1,0 +1,29 @@
+<form [formGroup]="form_login" (ngSubmit)="onSubmit()">
+    <div class="form__header">
+        <h1 class="form__h1">Bienvenido</h1>
+        <div class="line"></div>
+    </div>
+
+    <div class="form__register">
+        <!-- input correo -->
+        <input class="input" type="text" id="email" placeholder="Correo" formControlName="email"
+        [ngClass]="{is_invalid: (form_login.get('email').dirty || form_login.get('email').touched) && !form_login.get('email').valid}">
+        <!-- si el input correo no es valido se muestra el mensaje -->
+        <div *ngIf="!form_login.get('email').valid" class="invalid_input">
+            <div *ngIf="form_login.get('email').errors.required">*Campo obligatorio</div>
+            <div *ngIf="form_login.get('email').errors.email" style="color: red;">Correo incorrecto</div>
+        </div>
+        <!-- input contraseña -->
+        <input class="input" type="password" id="password" placeholder="Contraseña" formControlName="password"
+        [ngClass]="{is_invalid: (form_login.get('password').dirty || form_login.get('password').touched) && !form_login.get('password').valid}">
+        <!-- si el input correo no es valido se muestra el mensaje -->
+        <div *ngIf="!form_login.get('password').valid" class="invalid_input">
+            <div *ngIf="form_login.get('password').errors.required">*Campo obligatorio</div>
+            <div *ngIf="form_login.get('password').errors.minlength" style="color: red;">Contraseña no válida</div>
+        </div>
+    </div>
+
+    <button class="form__button" type="submit" [disabled]="form_login.invalid">
+        Login
+    </button>
+</form>

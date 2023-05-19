@@ -1,0 +1,42 @@
+.login-page{
+    height: 77.9vh;
+    background-image: url(../../../assets/img/fondo-home.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*----------Media-Queries---------*/
+@media screen and (max-width: 1280px) {
+    .login-page{
+        height: 82.6vh;
+    }
+}
+@media screen and (max-width: 912px) {
+    .login-page{
+        height: 90vh;
+    }
+}
+@media screen and (max-width: 820px) {
+    .login-page{
+        height: 88.3vh;
+    }
+}
+@media screen and (max-width: 414px) {
+    .login-page{
+        height: 85.5vh;
+    }
+}
+@media screen and (max-width: 375px) {
+    .login-page{
+        height: 82.5vh;
+    }
+}
+@media screen and (max-width: 360px) {
+    .login-page{
+        height: 84vh;
+    }
+}
