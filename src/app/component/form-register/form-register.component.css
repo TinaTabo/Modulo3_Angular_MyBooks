@@ -30,7 +30,7 @@ form{
         align-items: center;
         gap: 5px;
     }
-        input{
+        .input{
             border: 1px solid var(--color-gris);
             border-radius: 5px;
             color: black;
@@ -40,12 +40,12 @@ form{
             height: 36px;
             width: 180px;
         }
-        input::placeholder{
+        .input::placeholder{
             color: var(--color-gris);
             font-size: 13px;
             padding-left: 10px;
         }
-        input[type=text]:focus, input[type=password]:focus{
+        .input[type=text]:focus, .input[type=password]:focus{
             color: var(--color-primario);
             border-color: var(--color-terciario);
             box-shadow: 0 0 8px var(--color-pastel);
@@ -70,6 +70,29 @@ form{
         font-weight: 600;
         transform: translateY(4px);
     }
+    .form__button:disabled{
+        background-color: var(--color-gris);
+        transform: translateY(0px);
+        font-weight: bold;
+        border: none;
+        color: var(--color-blanco);
+    }
+
+/* Validación de los inputs*/
+.is_invalid[type=text]:focus, .is_invalid[type=password]:focus{
+    color: red;
+    border-color: var(--color-terciario);
+    box-shadow: 0 0 8px red;
+    outline: 0 none;
+}
+.invalid_input{
+    width: 180px;
+    font-size: 11px;
+    text-align: center;
+}
+.invalid_input_aside{
+    text-align: end;
+}
 
 
 /*----------Media-Queries---------*/

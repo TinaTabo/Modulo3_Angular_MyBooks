@@ -1,18 +1,44 @@
-<form>
+<form [formGroup]="form_register" (ngSubmit)="onSubmit()">
     <div class="form__header">
         <h1 class="form__h1">Registrate</h1>
         <div class="line"></div>
     </div>
 
     <div class="form__register">
-        <input type="text" id="name" placeholder="Nombre">
-        <input type="text" id="lastName" placeholder="Apellidos">
-        <input type="text" id="email" placeholder="Correo">
-        <input type="password" id="password" placeholder="Contraseña">
-        <input type="password" id="repeatPassword" placeholder="Repetir Contraseña">
+        <!-- input nombre -->
+        <input class="input" type="text" id="name" placeholder="Nombre" formControlName="name"
+        [ngClass]="{is_invalid: (form_register.get('name').dirty || form_register.get('name').touched) && !form_register.get('name').valid}">
+        <div *ngIf="!form_register.get('name').valid" class="invalid_input">
+            <div *ngIf="form_register.get('name').errors.minlength" style="color: red;">Nombre: Mínimo 3 caracteres</div>
+        </div>
+        <!-- input apellidos -->
+        <input class="input" type="text" id="lastName" placeholder="Apellidos" formControlName="lastname"
+        [ngClass]="{is_invalid: (form_register.get('lastname').dirty || form_register.get('lastname').touched) && !form_register.get('lastname').valid}">
+        <div *ngIf="!form_register.get('lastname').valid" class="invalid_input">
+            <div *ngIf="form_register.get('lastname').errors.minlength" style="color: red;">Nombre: Mínimo 3 caracteres</div>
+        </div>
+        <!-- input correo -->
+        <input class="input" type="text" id="email" placeholder="Correo" formControlName="email"
+        [ngClass]="{is_invalid: (form_register.get('email').dirty || form_register.get('email').touched) && !form_register.get('email').valid}">
+        <div *ngIf="!form_register.get('email').valid" class="invalid_input">
+            <div *ngIf="form_register.get('email').errors.email" style="color: red;">Un correo debe tener '@'</div>
+        </div>
+        <!-- inputs de contraseña -->
+        <input class="input" type="password" id="password" placeholder="Contraseña" formControlName="password"
+        [ngClass]="{is_invalid: (form_register.get('password').dirty || form_register.get('password').touched) && !form_register.get('password').valid}">
+        <div *ngIf="!form_register.get('password').valid" class="invalid_input">
+            <div *ngIf="form_register.get('password').errors.minlength" style="color: red;">Mínimo 8 caracteres</div>
+        </div>
+        <input class="input" type="password" id="repeatPassword" placeholder="Repetir Contraseña" formControlName="repeatPassword"
+        [ngClass]="{is_invalid: (form_register.get('repeatPassword').dirty || form_register.get('repeatPassword').touched) && !form_register.get('repeatPassword').valid}">
+        <div *ngIf="!form_register.get('repeatPassword').valid" class="invalid_input">
+            <div *ngIf="form_register.get('repeatPassword').errors.minlength" style="color: red;">Mínimo 8 caracteres</div>
+        </div>
+        <!-- div que muestra los errores en los inputs -->
+        <div class="invalid_input">*Todos los campos son obligatorios</div>
     </div>
 
-    <button class="form__button" type="reset">
+    <button class="form__button" type="submit" [disabled]="form_register.invalid">
         Registrarse
     </button>
 </form>
