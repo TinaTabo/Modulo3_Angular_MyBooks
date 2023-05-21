@@ -34,3 +34,20 @@ main{
     .text__empty{
         color: var(--color-primario);
     }
+
+/*----------Media-Queries---------*/
+@media screen and (min-width: 280px) {
+    #search_bar{
+        width: 200px;
+    }
+}
+@media screen and (min-width: 360px) {
+    #search_bar{
+        width: 300px;
+    }
+}
+@media screen and (min-width: 768px) {
+    #search_bar{
+        width: 400px;
+    }
+}

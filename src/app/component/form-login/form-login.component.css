@@ -91,8 +91,31 @@ form{
     text-align: end;
 }
 /*----------Media-Queries---------*/
+@media screen and (max-width: 414px) {
+    form{
+        width: 350px;
+    }
+    .line{
+        width: 310px;
+    }
+    .input{
+        width: 310px;
+    }
+    .invalid_input{
+        width: 310px;
+    }
+}
 @media screen and (max-width: 280px) {
     form{
-        width: 240px;
+        width: 250px;
+    }
+    .line{
+        width: 210px;
+    }
+    .input{
+        width: 200px;
+    }
+    .invalid_input{
+        width: 200px;
     }
 }
