@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors} from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-register',
@@ -21,6 +22,22 @@ export class FormRegisterComponent {
     })
   }
 
+  successMsg(){
+    Swal.fire({
+      icon: 'success',
+      title: '¡Felicidades!',
+      text: 'Tu registro ha sido exitoso. Ahora eres parte de nuestra comunidad. Inicia sesión con tu nueva cuenta y comienza a explorar todas las funcionalidades que ofrecemos. ¡Gracias por unirte a nosotros!'
+    })
+  }
+
+  errorMsg(){
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Las contraseñas no coinciden. Vuelve a intentarlo.'
+    })
+  }
+
   onSubmit(){
     let name = this.form_register.get('name').value;
     let lastname = this.form_register.get('lastname').value;
@@ -31,5 +48,11 @@ export class FormRegisterComponent {
     console.log(`Nombre: ${name}, Apellidos: ${lastname}`);
     console.log(`Correo: ${email}`);
     console.log(`Contraseña: ${password}, Verificación: ${repeatPassword}`);
+    
+    if(password === repeatPassword){
+      this.successMsg();
+    }else{
+      this.errorMsg();
+    }
   }
 }

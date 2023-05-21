@@ -17,6 +17,7 @@ import { AddBookComponent } from './page/add-book/add-book.component';
 import { UpdateBookComponent } from './page/update-book/update-book.component';
 import { LoginComponent } from './page/login/login.component';
 import { FormLoginComponent } from './component/form-login/form-login.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FormLoginComponent } from './component/form-login/form-login.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
