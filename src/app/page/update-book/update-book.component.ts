@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-update-book',
@@ -15,8 +16,15 @@ export class UpdateBookComponent {
     this.booksService.getAll();
   }
 
-  update(title:string,type:string,author:string,price:number,photo:string,id_book:number){
-    let bookToUpdated = new Book(title,type,author,price,photo,id_book,0);
+  public title:string = '';
+  public type:string = '';
+  public author:string = '';
+  public price:number;
+  public photo:string = '';
+  public id_book:number;
+
+  update(updateBookForm: NgForm){
+    let bookToUpdated = new Book(this.title,this.type,this.author,this.price,this.photo,this.id_book,0);
     this.booksService.edit(bookToUpdated);
     this.router.navigateByUrl('/books');
   }
