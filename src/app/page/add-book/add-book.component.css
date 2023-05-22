@@ -94,20 +94,3 @@
     text-align: center;
     color: var(--color-blanco);
 }
-
-/*----------Media-Queries---------*/
-@media screen and (min-width: 360px) {
-    .form-block{
-        height: 77.5vh;
-    }
-}
-@media screen and (min-width: 1024px) {
-    .form-block{
-        height: 86.5vh;
-    }
-}
-@media screen and (min-width: 1280px) {
-    .form-block{
-        height: 82.8vh;
-    }
-}
