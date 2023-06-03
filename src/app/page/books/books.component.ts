@@ -18,8 +18,12 @@ export class BooksComponent {
   }
 
   deleteBook(id_book:number):void{
-    this.booksService.delete(id_book).subscribe((data:Book[])=>{
-      this.books = data;
+    this.booksService.delete(id_book).subscribe((data:Boolean)=>{
+      if (data) {
+        this.booksService.getAll().subscribe((data:Book[])=>{
+          this.books = data;
+        })
+      }
     })
   }
 
