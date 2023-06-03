@@ -9,7 +9,7 @@ import { BooksService } from 'src/app/shared/books.service';
 })
 export class BooksComponent {
 
-  public books: Book[];
+  public books: Book[] = [];
 
   constructor(public booksService: BooksService){
     this.booksService.getAll().subscribe((data:Book[])=>{
