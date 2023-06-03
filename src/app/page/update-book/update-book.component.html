@@ -35,7 +35,7 @@
                     <p *ngIf="photoId.errors.required">*La URL de la foto es obligatoria</p>
                 </div>
 
-                <input class="input" type="text" id="id_book" placeholder="Código libro" name="id_book" [(ngModel)]="id_book" #bookId="ngModel"
+                <input class="input" type="text" id="id_book" placeholder="Código libro a modificar" name="id_book" [(ngModel)]="id_book" #bookId="ngModel"
                 [ngClass]="{'is_invalid': (bookId.dirty || bookId.touched) && bookId.invalid}" required>
                 <div *ngIf="(bookId.dirty || bookId.touched) && bookId.invalid" class="invalid_input">
                     <p *ngIf="bookId.errors.required">*El ID del libro es obligatorio</p>

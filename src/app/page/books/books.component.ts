@@ -12,18 +12,24 @@ export class BooksComponent {
   public books: Book[];
 
   constructor(public booksService: BooksService){
-    this.books = this.booksService.getAll();
+    this.booksService.getAll().subscribe((data:Book[])=>{
+      this.books = data;
+    })
   }
 
   deleteBook(id_book:number):void{
-    this.booksService.delete(id_book);
+    this.booksService.delete(id_book).subscribe((data:Book[])=>{
+      this.books = data;
+    })
   }
 
   searchBook(id_book:string):void{
     if (id_book != '') {
       for (let i = 0; i < this.books.length; i++) {
         if (Number(id_book) == this.books[i].id_book) {
-          this.books = [this.booksService.getOne(Number(id_book))];
+          this.booksService.getOne(Number(id_book)).subscribe((data:Book[])=>{
+            this.books = data;
+          })
         }else{
           let searchBookArray:Book[] = [];
           for (const book of this.books) {
@@ -35,7 +41,9 @@ export class BooksComponent {
         }
       }
     }else{
-      this.books = this.booksService.getAll();
+      this.booksService.getAll().subscribe((data:Book[])=>{
+        this.books = data;
+      })
     }
   }
 }

@@ -13,7 +13,9 @@ export class AddBookComponent {
 
   public books: Book[];
   constructor(public booksService: BooksService, public router: Router){
-    this.books = this.booksService.getAll();
+    this.booksService.getAll().subscribe((data:Book[])=>{
+      this.books = data;
+    })
   }
 
   public title:string = '';
@@ -25,7 +27,9 @@ export class AddBookComponent {
 
   addBook(addBookForm: NgForm){
     let newBook = new Book(this.title,this.type,this.author,this.price,this.photo,this.id_book,0);
-    this.booksService.add(newBook);
+    this.booksService.add(newBook).subscribe((data:Book[])=>{
+      this.books = data;
+    })
     this.router.navigateByUrl('/books');
   }
 }
