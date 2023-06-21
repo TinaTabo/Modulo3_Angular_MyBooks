@@ -33,6 +33,8 @@ export class FormRegisterComponent {
       icon: 'success',
       title: '¡Felicidades!',
       text: 'Tu registro ha sido exitoso. Ahora eres parte de nuestra comunidad. Inicia sesión con tu nueva cuenta y comienza a explorar todas las funcionalidades que ofrecemos. ¡Gracias por unirte a nosotros!'
+    }).then(()=>{
+      this.router.navigateByUrl('/login');
     })
   }
 
