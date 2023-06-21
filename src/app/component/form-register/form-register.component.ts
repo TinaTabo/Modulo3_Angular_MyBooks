@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
 import { Router } from '@angular/router';
+import { Response } from 'src/app/models/response';
 
 @Component({
   selector: 'app-form-register',
@@ -59,7 +60,7 @@ export class FormRegisterComponent {
 
     if(password === repeatPassword){
       //-- Se registra al usuario a través del servicio UserService
-      this.userService.registerUser(this.user).subscribe((data:JSON)=>{
+      this.userService.registerUser(this.user).subscribe((data:Response)=>{
         console.log(data);
         this.successMsg();
       })
