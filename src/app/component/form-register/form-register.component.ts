@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors} from '@angular/forms';
 import Swal from 'sweetalert2';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/shared/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-register',
@@ -10,6 +13,9 @@ import Swal from 'sweetalert2';
 export class FormRegisterComponent {
 
   public form_register: FormGroup;
+  public user:User;
+
+  constructor(public userService: UserService, public router: Router){}
 
   ngOnInit(){
     let minLength:number = 8;
@@ -38,6 +44,7 @@ export class FormRegisterComponent {
     })
   }
 
+  //-- Funcionalidad "Registrarse" al hacer submit del formulario de registro.
   onSubmit(){
     let name = this.form_register.get('name').value;
     let lastname = this.form_register.get('lastname').value;
@@ -45,14 +52,18 @@ export class FormRegisterComponent {
     let password = this.form_register.get('password').value;
     let repeatPassword = this.form_register.get('repeatPassword').value;
 
-    console.log(`Nombre: ${name}, Apellidos: ${lastname}`);
-    console.log(`Correo: ${email}`);
-    console.log(`Contraseña: ${password}, Verificación: ${repeatPassword}`);
-    
+    //-- Creamos un nuevo usuario con estos datos
+    this.user = new User(null,name,lastname,email,null,password);
+
     if(password === repeatPassword){
-      this.successMsg();
+      //-- Se registra al usuario a través del servicio UserService
+      this.userService.registerUser(this.user).subscribe((data:JSON)=>{
+        console.log(data);
+        this.successMsg();
+      })
     }else{
       this.errorMsg();
+      console.log("Las contraseñas no coinciden");
     }
   }
 }
