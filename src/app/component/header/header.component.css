@@ -12,7 +12,7 @@ nav{
         color: var(--color-blanco);
         font-family: '--fuente-primaria';
     }
-    .header__menu{
+    .header__menu,.header__notLogin{
         display: flex;
         flex-direction: row;
         justify-content: space-around;

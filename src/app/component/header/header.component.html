@@ -1,12 +1,18 @@
 <nav>
     <h1 class="header__title">MyBooks</h1>
     <ul class="header__menu">
-        <li><a class="header__link" routerLink="">Home</a></li>
-        <li><a class="header__link" routerLink="addBook">Add Book</a></li>
-        <li><a class="header__link" routerLink="updateBook">Update Book</a></li>
-        <li><a class="header__link" routerLink="books">Books</a></li>
-        <li><a class="header__link" routerLink="register">Register</a></li>
-        <li><a class="header__link" routerLink="login">Login</a></li>
-        <li><a class="header__link" routerLink="profile">Profile</a></li>
+
+        <div class="header__notLogin" *ngIf="!this.userService.logueado; else logueado">
+            <li><a class="header__link" routerLink="">Home</a></li>
+            <li><a class="header__link" routerLink="login">Login</a></li>
+            <li><a class="header__link" routerLink="register">Register</a></li>
+        </div>
+
+        <ng-template #logueado>
+            <li><a class="header__link" routerLink="books">Books</a></li>
+            <li><a class="header__link" routerLink="addBook">Add Book</a></li>
+            <li><a class="header__link" routerLink="updateBook">Update Book</a></li>
+            <li><a class="header__link" routerLink="profile">Profile</a></li>
+        </ng-template>
     </ul>
 </nav>
