@@ -3,6 +3,8 @@ import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { UserService } from 'src/app/shared/user.service';
+import { Response } from 'src/app/models/response';
 
 @Component({
   selector: 'app-add-book',
@@ -12,23 +14,23 @@ import { NgForm } from '@angular/forms';
 export class AddBookComponent {
 
   public books: Book[];
-  constructor(public booksService: BooksService, public router: Router){
-    this.booksService.getAll().subscribe((data:Book[])=>{
-      this.books = data;
+  constructor(public booksService: BooksService, public router: Router, public userService: UserService){
+    this.booksService.getAll(this.userService.user.id_user).subscribe((data:Response)=>{
+      this.books = data.data;
     })
   }
 
+  public id_book:number;
   public title:string = '';
   public type:string = '';
   public author:string = '';
   public price:number;
   public photo:string = '';
-  public id_book:number;
 
   addBook(addBookForm: NgForm){
-    let newBook = new Book(this.title,this.type,this.author,this.price,this.photo,this.id_book,0);
-    this.booksService.add(newBook).subscribe((data:Book[])=>{
-      this.books = data;
+    let newBook = new Book(this.id_book,this.userService.user.id_user,this.title,this.type,this.author,this.price,this.photo);
+    this.booksService.add(newBook).subscribe((data:Response)=>{
+      this.books = data.data;
       this.router.navigateByUrl('/books');
     })
   }

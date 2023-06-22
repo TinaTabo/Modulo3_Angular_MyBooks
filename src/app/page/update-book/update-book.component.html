@@ -6,34 +6,19 @@
         <div class="form__body">
             <div class="form__data">
                 <input class="input" type="text" id="title" placeholder="Título a modificar" name="title" [(ngModel)]="title" #titleId="ngModel"
-                [ngClass]="{'is_invalid': (titleId.dirty || titleId.touched) && titleId.invalid}" required>
-                <div *ngIf="(titleId.dirty || titleId.touched) && titleId.invalid" class="invalid_input">
-                    <p *ngIf="titleId.errors.required">*El título es obligatorio</p>
-                </div>
+                [ngClass]="{'is_invalid': (titleId.dirty || titleId.touched) && titleId.invalid}">
 
                 <input class="input" type="text" id="type" placeholder="Tapa blanda/dura" name="type" [(ngModel)]="type" #typeId="ngModel"
-                [ngClass]="{'is_invalid': (typeId.dirty || typeId.touched) && typeId.invalid}" required>
-                <div *ngIf="(typeId.dirty || typeId.touched) && typeId.invalid" class="invalid_input">
-                    <p *ngIf="typeId.errors.required">*El tipo de tapa es obligatoria</p>
-                </div>
+                [ngClass]="{'is_invalid': (typeId.dirty || typeId.touched) && typeId.invalid}">
 
                 <input class="input" type="text" id="author" placeholder="Autor" name="author" [(ngModel)]="author" #authorId="ngModel"
-                [ngClass]="{'is_invalid': (authorId.dirty || authorId.touched) && authorId.invalid}" required>
-                <div *ngIf="(authorId.dirty || authorId.touched) && authorId.invalid" class="invalid_input">
-                    <p *ngIf="authorId.errors.required">*El autor/a es obligatorio</p>
-                </div>
+                [ngClass]="{'is_invalid': (authorId.dirty || authorId.touched) && authorId.invalid}" >
 
                 <input class="input" type="text" id="price" placeholder="Precio" name="price" [(ngModel)]="price" #priceId="ngModel"
-                [ngClass]="{'is_invalid': (priceId.dirty || priceId.touched) && priceId.invalid}" required>
-                <div *ngIf="(priceId.dirty || priceId.touched) && priceId.invalid" class="invalid_input">
-                    <p *ngIf="priceId.errors.required">*El precio es obligatorio</p>
-                </div>
+                [ngClass]="{'is_invalid': (priceId.dirty || priceId.touched) && priceId.invalid}">
 
                 <input class="input" type="text" id="photo" placeholder="Foto" name="photo" [(ngModel)]="photo" #photoId="ngModel"
-                [ngClass]="{'is_invalid': (photoId.dirty || photoId.touched) && photoId.invalid}" required>
-                <div *ngIf="(photoId.dirty || photoId.touched) && photoId.invalid" class="invalid_input">
-                    <p *ngIf="photoId.errors.required">*La URL de la foto es obligatoria</p>
-                </div>
+                [ngClass]="{'is_invalid': (photoId.dirty || photoId.touched) && photoId.invalid}">
 
                 <input class="input" type="text" id="id_book" placeholder="Código libro a modificar" name="id_book" [(ngModel)]="id_book" #bookId="ngModel"
                 [ngClass]="{'is_invalid': (bookId.dirty || bookId.touched) && bookId.invalid}" required>

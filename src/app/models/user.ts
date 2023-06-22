@@ -1,5 +1,5 @@
 export class User {
-    constructor(public Id_user:number,
+    constructor(public id_user:number,
                 public name:string,
                 public last_name:string,
                 public email:string,
