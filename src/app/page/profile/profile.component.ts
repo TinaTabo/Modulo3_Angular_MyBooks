@@ -2,6 +2,7 @@ import { style } from '@angular/animations';
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { __values } from 'tslib';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -14,8 +15,8 @@ export class ProfileComponent {
 
   public profile: User;
 
-  constructor(private renderer2: Renderer2){
-    this.profile = new User(1234,'Cristina','Taboada Mayo','cris.taboada98@gmail.com','../../../assets/img/foto-perfil.jpg','56789');
+  constructor(private renderer2: Renderer2, public userService: UserService){
+    this.profile = this.userService.user;
   }
 
   modify(name:string,last_name:string,email:string,photo:string){
