@@ -17,6 +17,9 @@ export class ProfileComponent {
 
   constructor(private renderer2: Renderer2, public userService: UserService){
     this.profile = this.userService.user;
+    if (this.profile.photo == null) {
+      this.profile.photo = "../../../assets/img/foto-perfil.jpg";
+    }
   }
 
   modify(name:string,last_name:string,email:string,photo:string){
