@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class BooksService {
 
-  private url = "http://localhost:3000/books";
+  private url = "https://api-books-theta.vercel.app/books";
   constructor(private http: HttpClient){}
 
   // Métodos del servicio
