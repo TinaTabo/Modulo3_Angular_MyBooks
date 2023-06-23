@@ -1,6 +1,11 @@
 # Modulo3AngularMyBooks
 Este proyecto contiene todos los Retos correspondientes al Módulo 3 del Bootcamp de Desarrollo Web y Móvil de Codenotch.  
-Enlace a la app-web: https://modulo3-angular-my-books.vercel.app/
+Enlace a la app-web: https://modulo3-angular-my-books.vercel.app/  
+Puede registrarse como nuevo usuario y probar las funcionalidades de la app MyBooks o puede utilizar cualquiera de los siguientes usuarios de prueba:  
+- **email:** kagome@example.com **password:** shikon123
+- **email:** naruto@example.com **password:** ramen456
+- **email:** edward@example.com **password:** alchemy789
+- **email:** kenshin@example.com **password:** battousai123
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.  
 
